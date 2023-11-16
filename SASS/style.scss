@@ -10,12 +10,7 @@ $color_9: hsl(240, 10%, 16%);
 $font-family_1: var(--font-ubuntu);
 $font-family_2: var(--font-overpass);
 $background-color_1: var(--header-bg-color);
-/** Cositas para el header **/
-/** Descripción **/
-/** Primera sección **/
-/* Segunda seccion*/
-/* La seccion del footer empieza aqui*/
-/** Lo responsive empieza aqui con los media query **/
+
 :root {
 	--main-bg-color: hsl(0, 26%, 96%);
 	--header-bg-color: hsl(353, 100%, 62%);
@@ -37,6 +32,55 @@ html {
 	overflow-x: hidden;
 	background: var(--main-bg-color);
 }
+
+.pic-ctn {
+	width: 100vw;
+	height: 200px;
+  }
+  
+  @keyframes display {
+	0% {
+	  transform: translateX(200px);
+	  opacity: 0;
+	}
+	10% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+	20% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+	30% {
+	  transform: translateX(-200px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(-200px);
+	  opacity: 0;
+	}
+  }
+  
+  .pic-ctn {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	margin-left: 30vh;
+  }
+  
+  .pic-ctn > img {
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	animation: display 4s infinite;
+	width: 700px;
+  }
+  
+  img:nth-child(2) {
+	animation-delay: 2s;
+	width: 700px;
+  }
+
 .header {
 	width: 100%;
 	height: 80vh;
@@ -404,7 +448,55 @@ footer {
 		}
 	}
 }
-@media (max-width: 991px) {
+@media (max-width: 1000px) {
+	.pic-ctn {
+		width: 100vw;
+		height: 200px;
+	  }
+	  
+	  @keyframes display {
+		0% {
+		  transform: translateX(200px);
+		  opacity: 0;
+		}
+		10% {
+		  transform: translateX(0);
+		  opacity: 1;
+		}
+		20% {
+		  transform: translateX(0);
+		  opacity: 1;
+		}
+		30% {
+		  transform: translateX(-200px);
+		  opacity: 0;
+		}
+		100% {
+		  transform: translateX(-200px);
+		  opacity: 0;
+		}
+	  }
+	  
+	  .pic-ctn {
+		position: relative;
+		width: 100%;
+		height: 500px;
+		margin-left: -5vh;
+	  }
+	  
+	  .pic-ctn > img {
+		position: absolute;
+		top: 0;
+		opacity: 0;
+		animation: display 4s infinite;
+		width: 500px;
+	  }
+	  
+	  img:nth-child(2) {
+		animation-delay: 2s;
+		width: 500px;
+	  }
+
 	.header {
 		background: url(images/bg-pattern-intro.svg);
 		background-position: center;
@@ -650,6 +742,54 @@ footer {
 	}
 }
 @media (max-width: 375px) {
+	.pic-ctn {
+		width: 100vw;
+		height: 200px;
+	  }
+	  
+	  @keyframes display {
+		0% {
+		  transform: translateX(200px);
+		  opacity: 0;
+		}
+		10% {
+		  transform: translateX(0);
+		  opacity: 1;
+		}
+		20% {
+		  transform: translateX(0);
+		  opacity: 1;
+		}
+		30% {
+		  transform: translateX(-200px);
+		  opacity: 0;
+		}
+		100% {
+		  transform: translateX(-200px);
+		  opacity: 0;
+		}
+	  }
+	  
+	  .pic-ctn {
+		position: relative;
+		width: 100%;
+		height: 500px;
+		margin-left: -5vh;
+	  }
+	  
+	  .pic-ctn > img {
+		position: absolute;
+		top: 0;
+		opacity: 0;
+		animation: display 4s infinite;
+		width: 500px;
+	  }
+	  
+	  img:nth-child(2) {
+		animation-delay: 2s;
+		width: 500px;
+	  }
+
 	.header {
 		.header-content {
 			h1 {
@@ -701,5 +841,17 @@ footer {
 				font-size: .7rem;
 			}
 		}
+	}
+
+	#toggle-nav:checked + #mobilenav {
+		display: block;
+	}
+
+	#mobilenav {
+		display: none;
+	}
+
+	#toggle-nav:checked + #mobilenav {
+		display: block;
 	}
 }
